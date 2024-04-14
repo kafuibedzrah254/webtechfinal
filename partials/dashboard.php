@@ -1,4 +1,5 @@
 <?php
+include('connect.php');
 session_start();
 if(!isset($_SESSION['id'])){
     header('location:../');
@@ -14,10 +15,10 @@ if($_SESSION['status'] == 1){
 }
 
 // Connect to the database
-$servername = "localhost:";
-$username = "root";
-$password = "";
-$dbname = "votingsystem";
+//$servername = "localhost:";
+//$username = "root";
+//$password = "";
+//$dbname = "votingsystem";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
