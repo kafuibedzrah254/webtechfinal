@@ -1,5 +1,4 @@
 <?php
-//include('../actions/connect.php');
 session_start();
 if(!isset($_SESSION['id'])){
     header('location:../');
@@ -15,7 +14,7 @@ if($_SESSION['status'] == 1){
 }
 
 // Connect to the database
-$servername = "localhost:3306";
+$servername = "localhost:3308";
 $username = "root";
 $password = "";
 $dbname = "votingsystem";
@@ -75,11 +74,8 @@ $conn->close();
                 <strong class="text-dark h5">Group name:</strong>
                 <?php echo $group['username']; ?>
                 <br>
-                <!--<strong class="text-dark h5">Votes:</strong>-->
-                <?php //echo $group['votes']; ?>
 
                 <br>
-
             </div>
 
                 </div>
@@ -121,6 +117,12 @@ $conn->close();
         ?>
         <!--groups-->
         <hr>
+        <!-- View Election Results Button -->
+        <?php
+        if($_SESSION['status'] == 1){
+            echo '<a href="../actions/view_elections_results.php" class="btn btn-primary">View Election Results</a>';
+        }
+        ?>
     </div>
 
     <div class="col-md-5">
