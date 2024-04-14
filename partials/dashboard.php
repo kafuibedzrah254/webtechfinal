@@ -122,6 +122,9 @@ $conn->close();
         if($_SESSION['status'] == 1){
             echo '<a href="../actions/view_elections_results.php" class="btn btn-primary">View Election Results</a>';
         }
+        else{
+            echo "";
+        }
         ?>
     </div>
 
