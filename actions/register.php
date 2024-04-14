@@ -9,33 +9,34 @@ $image= $_FILES['photo']['name'];
 $tmp_name= $_FILES['photo']['tmp_name'];
 $std= $_POST['std'];
 
-
-
-if($password!=$cpassword){
+if($password != $cpassword){
     echo '<script>
     alert ("Passwords do not match");
     window.location = "../partials/registration.php";
     </script>';
+    exit;
 }
 
-else{
-    move_uploaded_file($tmp_name,"../uploads/$image");
-    $sql = "insert into `userdata` (username, mobile, password, photo,standard, status, votes)  values ('$username','$mobile','$password','$image','$std',0,0)" ;
+// Hash the password
+$hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    $result =mysqli_query($con,$sql);
+// Move uploaded file to destination folder
+move_uploaded_file($tmp_name, "../uploads/$image");
 
-    if($result){
-        echo '<script>
-        alert ("Registration succesful");
-        window.location = "../";
-        </script>';
-    
+// Insert user data into database
+$sql = "INSERT INTO `userdata` (username, mobile, password, photo, standard, status, votes)  
+        VALUES ('$username', '$mobile', '$hashed_password', '$image', '$std', 0, 0)";
 
-    }else{
-        die("Connection failed: " . mysqli_connect_error());
-    }
+$result = mysqli_query($con, $sql);
+
+if($result){
+    echo '<script>
+    alert ("Registration successful");
+    window.location = "../";
+    </script>';
+} else {
+    die("Connection failed: " . mysqli_error($con));
 }
 
-
-
+mysqli_close($con);
 ?>
