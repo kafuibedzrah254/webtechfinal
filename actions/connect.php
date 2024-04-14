@@ -1,7 +1,7 @@
 <?php
-$servername = "localhost:3308";
+$servername = "localhost";
 $username = "root";
-$password = "brim254@king";
+$password = "";
 $database = "votingsystem";
 // Create connection
 $con =  mysqli_connect($servername, $username, $password,$database);
