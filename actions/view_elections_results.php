@@ -55,7 +55,7 @@ if (mysqli_num_rows($result) > 0) {
 <body>
     <div class="container my-5">
         <a href="../"><button class="btn btn-dark text-light px-4">Back</button></a>
-        <h1 class="my-3">View Elections</h1>
+        <h1 class="my-3"> Elections Results</h1>
 
         <div class="row my-5">
             <div class="col-md-12">
