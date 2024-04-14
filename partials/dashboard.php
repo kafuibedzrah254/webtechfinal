@@ -62,98 +62,46 @@ $conn->close();
 <div class="row my-5">
     <div class="col-md-7">
 
+<?php
+if(!empty($groups)){
+    foreach($groups as $group){
+?>  
+    <div class="row">
+        <div class="col-md-4">
+            <img src="../uploads/<?php echo $group['photo']; ?>" alt="Group image" class="img-fluid">
+        </div>
+        <div class="col-md-8">
+            <strong class="text-dark h5">Group name:</strong>
+            <?php echo $group['username']; ?>
+            <br>
+            <br>
+        </div>
+    </div>
+    <form action="../actions/voting.php" method="POST">
+        <input type="hidden" name="groupvotes" value="<?php echo $group['votes']; ?>">
+        <input type="hidden" name="groupid" value="<?php echo $group['id']; ?>">
         <?php
-        if(!empty($groups)){
-           foreach($groups as $group){
-        ?>  
-            <div class="row">
-            <div class="col-md-4">
-                <img src="../uploads/<?php echo $group['photo']; ?>" alt="Group image">
-            </div>
-            <div class="col-md-8">
-                <strong class="text-dark h5">Group name:</strong>
-                <?php echo $group['username']; ?>
-                <br>
-
-                <br>
-            </div>
-
-                </div>
-                <form action="../actions/voting.php" method="POST">
-                    <input type="hidden" name="groupvotes" value="<?php echo $group['votes']; ?>">
-
-                   <input type="hidden" name="groupid" value="<?php echo $group['id']; ?>">
-
-                <?php
-                if($_SESSION['status']==1){
-                    ?>
-                    <button class="bg-success my-4 text-white px-3">Voted</button>
-                    <hr>
-                    <?php
-                }else{
-                    ?>
-                        <button class="bg-danger my-4 text-white px-3" type="submit">Vote</button>
-                        <hr>
-
-                    <?php
-                }
-
-                ?>
-
-               </form>
-            <?php
-           }
-
-        }
-
-        else{
-            ?>
-
-            <div class="container">
-                <p>No groups to display</p>
-            </div>
+        if($_SESSION['status']==1){
+        ?>
+            <button class="bg-success my-4 text-white px-3">Voted</button>
+            <hr>
+        <?php
+        }else{
+        ?>
+            <button class="bg-danger my-4 text-white px-3" type="submit">Vote</button>
+            <hr>
         <?php
         }
         ?>
-        <!--groups-->
-        <hr>
-        <!-- View Election Results Button -->
-        <?php
-        if($_SESSION['status'] == 1){
-            echo '<a href="../actions/view_elections_results.php" class="btn btn-primary">View Election Results</a>';
-        }
-        else{
-            echo "";
-        }
-        ?>
+    </form>
+<?php
+    }
+}
+else{
+?>
+    <div class="container">
+        <p>No groups to display</p>
     </div>
-
-    <div class="col-md-5">
-                <!--user profile-->
-                <img src="../uploads/<?php echo $data['photo']; ?>" alt="User image">
-                <br>
-                <br>
-                <strong class="text-dark h5"> Name:</strong>
-                <?php echo $data['username']; ?>
-
-                <br><br>
-                <strong class="text-dark h5"> Mobile:</strong>
-                <?php echo $data['mobile']; ?>
-
-                
-                <br><br>
-                <strong class="text-dark h5"> Status:</strong>
-                <?php echo $status; ?>
-
-                
-                <br><br>
-
-
-
-
-    </div>
-
-</div>
-</div>
-</body>
-</html>
+<?php
+}
+?>
