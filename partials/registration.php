@@ -13,7 +13,7 @@
         <div class="container text-center">
             <form action="../actions/register.php" method="POST" enctype="multipart/form-data">
                 <div class="mb-3">
-                    <input type="text" class="form-control w-50 m-auto" placeholder="Enter your username" required="required" name="username">
+                    <input type="text" class="form-control w-50 m-auto" placeholder="Enter your username" required="required" name="username" pattern="[A-Za-z]{1,250}" title="Username must contain only alphabets and should be between 1 to 250 characters">
                 </div>
                 <div class="mb-3">
                     <input type="text" class="form-control w-50 m-auto" placeholder="Enter your phone number (10 digits)" required="required" pattern="[0-9]{10}" title="Please enter 10 digits" name="mobile">
