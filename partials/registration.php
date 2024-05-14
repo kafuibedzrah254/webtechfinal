@@ -16,7 +16,13 @@
                     <input type="text" class="form-control w-50 m-auto" placeholder="Enter your username" required="required" name="username" pattern="[A-Za-z]{1,250}" title="Username must contain only alphabets and should be between 1 to 250 characters">
                 </div>
                 <div class="mb-3">
-                    <input type="text" class="form-control w-50 m-auto" placeholder="Enter your phone number (10 digits)" required="required" pattern="[0-9]{10}" title="Please enter 10 digits" name="mobile">
+                    <input type="email" class="form-control w-50 m-auto" placeholder="Enter your email" required="required" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Please enter a valid email address">
+                </div>
+                <div class="mb-3">
+                    <div class="input-group w-50 m-auto">
+                        <span class="input-group-text">+233</span>
+                        <input type="tel" class="form-control" placeholder="Enter your phone number" required="required" name="mobile" pattern="[0-9]{9}" title="">
+                    </div>
                 </div>
                 <div class="mb-3">
                     <input type="password" class="form-control w-50 m-auto" placeholder="Enter your password" required="required" name="password">
