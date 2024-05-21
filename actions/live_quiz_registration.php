@@ -52,7 +52,7 @@
 <body>
     <form id="myForm">
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+        <input type="text" id="name" name="name" pattern="[A-Za-z\s]+" title="Only letters and spaces are allowed" required>
 
         <label for="features">Features:</label>
         <select id="features" name="features" multiple required>
