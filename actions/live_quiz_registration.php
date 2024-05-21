@@ -5,12 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form with Validation</title>
     <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
         form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 300px;
-            margin: 0 auto;
         }
         label {
             display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #error {
+            color: red;
+            display: none;
             margin-top: 10px;
         }
     </style>
@@ -28,7 +62,7 @@
             <option value="feature4">Feature 4</option>
         </select>
         
-        <p id="error" style="color:red; display:none;">Please select at least two features.</p>
+        <p id="error">Please select at least two features.</p>
 
         <button type="submit">Submit</button>
     </form>
