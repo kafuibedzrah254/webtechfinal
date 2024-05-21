@@ -10,11 +10,11 @@ $features= $_POST['features'];
 // Insert user data into database
 $sql = "INSERT INTO `product` (pname)  
         VALUES ('$name')";
-$sql_one= "INSERT INTO `product_feature` (feature_name)  
-VALUES ('$features')";
+//$sql_one= "INSERT INTO `product_feature` (feature_name)  
+//VALUES ('$features')";
 $result = mysqli_query($con, $sql);
 
-$result_one = mysqli_query($con,$sql_one);
+//$result_one = mysqli_query($con,$sql_one);
 
 if($result){
     echo '<script>
