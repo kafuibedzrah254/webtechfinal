@@ -56,10 +56,10 @@
 
         <label for="features">Features:</label>
         <select id="features" name="features" multiple required>
-            <option value="feature1">Feature 1</option>
-            <option value="feature2">Feature 2</option>
-            <option value="feature3">Feature 3</option>
-            <option value="feature4">Feature 4</option>
+            <option value="feature1">Car</option>
+            <option value="feature2">Trolley</option>
+            <option value="feature3">Van</option>
+            <option value="feature4">Truck</option>
         </select>
         
         <p id="error">Please select at least two features.</p>
