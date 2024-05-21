@@ -50,7 +50,7 @@
     </style>
 </head>
 <body>
-    <form id="myForm">
+    <form  action="live_quiz_register.php"  method="POST" id="myForm">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" pattern="[A-Za-z\s]+" title="Only letters and spaces are allowed" required>
 
