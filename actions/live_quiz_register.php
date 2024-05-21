@@ -19,7 +19,7 @@ $result_one = mysqli_query($con,$sql_one);
 if($result){
     echo '<script>
     alert ("Registration successful");
-    window.location = "../";
+    window.location = "live_quiz_registration.php";
     </script>';
 } else {
     die("Connection failed: " . mysqli_error($con));
