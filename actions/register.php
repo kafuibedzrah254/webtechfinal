@@ -3,6 +3,7 @@ include('connect.php');
 
 $username= $_POST['username'];
 $mobile= $_POST['mobile'];
+$email=$_POST['email'];
 $password= $_POST['password'];
 $cpassword= $_POST['cpassword'];
 $image= $_FILES['photo']['name'];
@@ -24,8 +25,8 @@ $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 move_uploaded_file($tmp_name, "../uploads/$image");
 
 // Insert user data into database
-$sql = "INSERT INTO `userdata` (username, mobile, password, photo, standard, status, votes)  
-        VALUES ('$username', '$mobile', '$hashed_password', '$image', '$std', 0, 0)";
+$sql = "INSERT INTO `userdata` (username,email, mobile, password, photo, standard, status, votes)  
+        VALUES ('$username','$email','$mobile', '$hashed_password', '$image', '$std', 0, 0)";
 
 $result = mysqli_query($con, $sql);
 
