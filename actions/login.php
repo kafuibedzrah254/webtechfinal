@@ -7,7 +7,6 @@ $mobile = $_POST['mobile'];
 $password = $_POST['password'];
 $std = $_POST['std'];
 
-// Fetch hashed password from database
 $sql = "SELECT * FROM `userdata` WHERE username ='$username' AND mobile ='$mobile' AND standard = '$std'";
 $result = mysqli_query($con, $sql);
 
@@ -30,7 +29,7 @@ if (mysqli_num_rows($result) > 0) {
         }
 
         // Check if the user is a group or single voter
-        if ($std == "group" || $std == "single voter") {
+        if ($std == "single voter") {
             echo '<!DOCTYPE html>
             <html lang="en">
             <head>

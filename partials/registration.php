@@ -21,7 +21,7 @@
                 <div class="mb-3">
                     <div class="input-group w-50 m-auto">
                         <span class="input-group-text">+233</span>
-                        <input type="tel" class="form-control" placeholder="Enter your phone number" required="required" name="mobile" pattern="[0-9]{9}" title="">
+                        <input type="tel" class="form-control" placeholder="Enter your phone number" required="required" name="mobile" pattern="[0-9]{9}" title="phone number should be 9 digits">
                     </div>
                 </div>
                 <div class="mb-3">
@@ -35,7 +35,6 @@
                 </div>
                 <div class="mb-3">
                     <select name="std" class="form-select w-50 m-auto" required="required">
-                        <option value="group">Group</option>
                         <option value="single voter">Single Voter</option>
                         <option value="poll creator">Poll Creator</option>
                     </select>  
