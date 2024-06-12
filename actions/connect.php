@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost:3306";
+$servername = "localhost:3308";
 $username = "root";
 $password = "";
-$database = "chores_mgt";
+$database = "votingsystem";
 // Create connection
 $con =  mysqli_connect($servername, $username, $password,$database);
 

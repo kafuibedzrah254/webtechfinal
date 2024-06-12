@@ -14,7 +14,7 @@ if($_SESSION['status'] == 1){
 }
 
 // Connect to the database
-$servername = "localhost:3306";
+$servername = "localhost:3308";
 $username = "root";
 $password = "";
 $dbname = "votingsystem";
@@ -123,7 +123,7 @@ $conn->close();
             echo '<a href="../actions/view_elections_results.php" class="btn btn-primary">View Election Results</a>';
         }
         else{
-            echo "";
+            echo "   ";
         }
         ?>
     </div>

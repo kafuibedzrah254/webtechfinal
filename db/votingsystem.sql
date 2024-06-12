@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Apr 15, 2024 at 01:36 AM
+-- Host: 127.0.0.1:3308
+-- Generation Time: Apr 13, 2024 at 12:28 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -26,9 +26,11 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `polls`
 --
-
+DROP DATABASE IF EXISTS votingsystem;
+CREATE DATABASE votingsystem;
+USE votingsystem;
 CREATE TABLE `polls` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `question` varchar(255) NOT NULL,
   `first_option` varchar(255) NOT NULL,
   `second_option` varchar(255) NOT NULL,
@@ -42,9 +44,7 @@ CREATE TABLE `polls` (
 
 INSERT INTO `polls` (`id`, `question`, `first_option`, `second_option`, `third_option`, `fourth_option`) VALUES
 (1, 'Richest Man?', 'Messi', 'Ronaldo', 'Mbappe', 'Tevez'),
-(2, 'Richest Man?', 'Messi', 'Ronaldo', 'Mbappe', 'Tevez'),
-(3, 'messi?', 'a', 'b', 'c', 'd'),
-(4, 'Who is the best player in the pwrld', 'Messi', 'Ronaldo', 'Mbappe', 'Kudus');
+(2, 'Richest Man?', 'Messi', 'Ronaldo', 'Mbappe', 'Tevez');
 
 -- --------------------------------------------------------
 
@@ -68,11 +68,18 @@ CREATE TABLE `userdata` (
 --
 
 INSERT INTO `userdata` (`id`, `username`, `mobile`, `password`, `photo`, `standard`, `status`, `votes`) VALUES
-(33, 'Yaa', '0205672344', '$2y$10$YMZZjh4mtN5TEfWFlY2yq.KzVoFzMifaziQPVhukMGd4ccw.OFKna', '', 'single voter', 1, 0),
-(34, 'Spartans', '0575102032', '$2y$10$FDNJ1WjuO1b6f.VmPEc59.Tk5NudLhnCKBVr80VnGgqNHL.rbxCXW', '', 'group', 0, 1),
-(35, 'Avengers', '0247815825', '$2y$10$ILBoS1YwFglEd.qZ05FZFueItiL0SNNzJS/IbGbxYfobN67ozF/CK', '', 'group', 0, 0),
-(36, 'Acers', '0235678153', '$2y$10$UOfSk.hnDLmQgdspySDEM.vsrUoGDJKLMQgrIdh4jBRV7eqtCPksq', '', 'group', 0, 0),
-(37, 'Bismark', '0205467811', '$2y$10$7yhIA9kWMwvOvPfhXNa.xebC25Aa.kNq7sVPWQIp8871gunH.QMM6', '', 'poll creator', 0, 0);
+(1, 'bybyj', '0208158255', 'Pa$$w0rd!', '', 'group', 1, 3),
+(2, 'weneleruny', '0263164169', 'Pa$$w0rd!', 'ashesi.png', 'group', 0, 2),
+(3, 'sepumukav', '0000000000', '1234', 'comp3.png', 'single voter', 1, 0),
+(4, 'vusegujo', '0277815825', '4567', 'ddsa.png', 'group', 0, 2),
+(5, 'wizakafuwi', '0575102024', 'lego', 'curry.png', 'group', 0, 4),
+(6, 'zavorypu', '9999999990', '9999', '', 'single voter', 1, 0),
+(7, 'sivydujyma', '7777777777', '7777777777', '', 'single voter', 1, 0),
+(8, 'ciguc', '0204561234', '5678', '', 'single voter', 1, 0),
+(9, 'kuqyvam', '7878787878', '8888', '', 'poll creator', 0, 0),
+(10, 'Bismark Bedzrah', '8090000000', '123456', '', 'poll creator', 0, 0),
+(11, 'Kwadwo', '7777777777', '0000', '', 'poll creator', 0, 0),
+(12, 'qojeg', '0200000000', 'Pa$$w0rd!', '', 'single voter', 0, 0);
 
 --
 -- Indexes for dumped tables
@@ -98,13 +105,13 @@ ALTER TABLE `userdata`
 -- AUTO_INCREMENT for table `polls`
 --
 ALTER TABLE `polls`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `userdata`
 --
 ALTER TABLE `userdata`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
